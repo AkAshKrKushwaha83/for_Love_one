@@ -4,8 +4,6 @@
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
-  body { background: #0a0010; }
-
   #love-wrap {
     font-family: var(--font-sans);
     background: linear-gradient(135deg, #0a0010 0%, #1a0030 40%, #0d0020 100%);
@@ -19,73 +17,36 @@
     position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;
   }
 
-  .section {
-    position: relative; z-index: 2; text-align: center; padding: 40px 20px 20px;
-  }
+  .section { position: relative; z-index: 2; text-align: center; padding: 40px 20px 20px; }
 
   .main-title {
-    font-size: 52px;
-    font-weight: 700;
+    font-size: 52px; font-weight: 700;
     background: linear-gradient(90deg, #ff6fd8, #ffb347, #ff6fd8);
     background-size: 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     animation: shimmer 2.5s infinite linear;
-    line-height: 1.1;
-    text-shadow: none;
-    letter-spacing: -1px;
+    line-height: 1.1; letter-spacing: -1px;
   }
 
-  @keyframes shimmer {
-    0% { background-position: 0% }
-    100% { background-position: 200% }
-  }
+  @keyframes shimmer { 0% { background-position: 0% } 100% { background-position: 200% } }
 
-  .subtitle {
-    color: #e0b8ff;
-    font-size: 18px;
-    margin-top: 10px;
-    letter-spacing: 2px;
-    opacity: 0.85;
-    animation: fadeUp 1s ease forwards;
-  }
+  .subtitle { color: #e0b8ff; font-size: 18px; margin-top: 10px; letter-spacing: 2px; opacity: 0.85; }
 
-  @keyframes fadeUp {
-    from { opacity:0; transform: translateY(20px); }
-    to { opacity:0.85; transform: translateY(0); }
-  }
+  .hearts-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 20px auto 10px; }
 
-  .hearts-row {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 20px auto 10px;
-  }
-
-  .big-heart {
-    font-size: 40px;
-    animation: heartbeat 1.2s ease-in-out infinite;
-    display: inline-block;
-    filter: drop-shadow(0 0 12px #ff4fa3);
-  }
+  .big-heart { font-size: 40px; animation: heartbeat 1.2s ease-in-out infinite; display: inline-block; filter: drop-shadow(0 0 12px #ff4fa3); }
   .big-heart:nth-child(2) { animation-delay: 0.2s; font-size: 32px; filter: drop-shadow(0 0 10px #ff9f43); }
   .big-heart:nth-child(3) { animation-delay: 0.4s; font-size: 48px; }
   .big-heart:nth-child(4) { animation-delay: 0.15s; font-size: 28px; filter: drop-shadow(0 0 8px #a29bfe); }
   .big-heart:nth-child(5) { animation-delay: 0.35s; font-size: 36px; filter: drop-shadow(0 0 10px #fd79a8); }
 
-  @keyframes heartbeat {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.25); }
-  }
+  @keyframes heartbeat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.25); } }
 
   .glowing-card {
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255, 111, 216, 0.3);
-    border-radius: 20px;
-    padding: 24px 28px;
-    margin: 18px auto;
-    max-width: 580px;
+    border-radius: 20px; padding: 24px 28px;
+    margin: 18px auto; max-width: 580px;
     box-shadow: 0 0 30px rgba(255,79,163,0.2), 0 0 60px rgba(162,155,254,0.1);
     animation: glowPulse 3s ease-in-out infinite;
   }
@@ -95,162 +56,123 @@
     50% { box-shadow: 0 0 40px rgba(255,79,163,0.5), 0 0 80px rgba(162,155,254,0.3); }
   }
 
-  .poem-text {
-    color: #f0d6ff;
-    font-size: 15px;
-    line-height: 2;
-    font-style: italic;
-    text-shadow: 0 0 8px rgba(255,111,216,0.4);
-  }
+  .poem-text { color: #f0d6ff; font-size: 15px; line-height: 2; font-style: italic; text-shadow: 0 0 8px rgba(255,111,216,0.4); }
+  .poem-text span { color: #ffb3e6; font-weight: 500; }
 
-  .poem-text span {
-    color: #ffb3e6;
-    font-weight: 500;
-  }
-
-  .reasons-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 12px;
-    max-width: 580px;
-    margin: 0 auto 10px;
-  }
+  .reasons-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; max-width: 580px; margin: 0 auto 10px; }
 
   .reason-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,179,230,0.2);
-    border-radius: 14px;
-    padding: 16px 12px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: default;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,179,230,0.2);
+    border-radius: 14px; padding: 16px 12px;
+    transition: transform 0.3s, box-shadow 0.3s; cursor: default;
   }
-
-  .reason-card:hover {
-    transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 0 25px rgba(255,79,163,0.4);
-    border-color: rgba(255,79,163,0.5);
-  }
-
+  .reason-card:hover { transform: translateY(-4px) scale(1.03); box-shadow: 0 0 25px rgba(255,79,163,0.4); border-color: rgba(255,79,163,0.5); }
   .reason-icon { font-size: 28px; display: block; margin-bottom: 8px; }
   .reason-label { color: #f0d6ff; font-size: 13px; font-weight: 500; }
 
-  .rotating-ring {
-    margin: 20px auto;
-    width: 120px; height: 120px;
-    position: relative;
-    display: flex; align-items: center; justify-content: center;
-  }
-
-  .rotating-ring svg {
-    position: absolute; top: 0; left: 0;
-    animation: rotateSlow 6s linear infinite;
-  }
-
+  .rotating-ring { margin: 20px auto; width: 120px; height: 120px; position: relative; display: flex; align-items: center; justify-content: center; }
+  .rotating-ring svg { position: absolute; top: 0; left: 0; animation: rotateSlow 6s linear infinite; }
   .center-emoji { font-size: 48px; z-index: 1; animation: heartbeat 1.5s ease-in-out infinite; }
+  @keyframes rotateSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
-  @keyframes rotateSlow {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
+  .ribbon-text { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #c39bd3; margin: 6px 0 14px; opacity: 0.7; }
 
-  .ribbon-text {
-    font-size: 13px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #c39bd3;
-    margin: 6px 0 14px;
-    opacity: 0.7;
-  }
-
-  .like-section {
-    position: relative; z-index: 2;
-    text-align: center;
-    padding: 24px 20px 16px;
-  }
+  .like-section { position: relative; z-index: 2; text-align: center; padding: 24px 20px 16px; }
 
   .like-btn {
     background: linear-gradient(135deg, #ff4fa3, #ff7675);
-    border: none;
-    border-radius: 50px;
-    padding: 16px 40px;
-    font-size: 20px;
-    font-weight: 700;
-    color: #fff;
-    cursor: pointer;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 30px rgba(255,79,163,0.5);
+    border: none; border-radius: 50px; padding: 16px 40px;
+    font-size: 20px; font-weight: 700; color: #fff; cursor: pointer;
+    letter-spacing: 1px; box-shadow: 0 4px 30px rgba(255,79,163,0.5);
     transition: transform 0.15s, box-shadow 0.3s;
     display: inline-flex; align-items: center; gap: 10px;
   }
-
-  .like-btn:hover {
-    transform: scale(1.08);
-    box-shadow: 0 8px 50px rgba(255,79,163,0.7);
-  }
-
+  .like-btn:hover { transform: scale(1.08); box-shadow: 0 8px 50px rgba(255,79,163,0.7); }
   .like-btn:active { transform: scale(0.96); }
 
   .like-count {
-    display: inline-block;
-    background: rgba(255,255,255,0.15);
-    border-radius: 30px;
-    padding: 8px 28px;
-    font-size: 22px;
-    font-weight: 700;
-    color: #ffd6f5;
-    margin-top: 14px;
-    letter-spacing: 1px;
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border-radius: 30px; padding: 8px 28px;
+    font-size: 22px; font-weight: 700; color: #ffd6f5;
+    margin-top: 14px; letter-spacing: 1px;
     box-shadow: 0 0 20px rgba(255,79,163,0.3);
     transition: transform 0.2s;
   }
-
   .like-count.pop { animation: popAnim 0.3s ease; }
+  @keyframes popAnim { 0% { transform: scale(1); } 50% { transform: scale(1.3); } 100% { transform: scale(1); } }
 
-  @keyframes popAnim {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.3); }
-    100% { transform: scale(1); }
-  }
-
-  .signature {
+  /* Visitor Counter */
+  .visitor-section {
     position: relative; z-index: 2;
     text-align: center;
-    padding: 16px 20px 36px;
+    padding: 10px 20px 20px;
   }
 
+  .visitor-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(162,155,254,0.35);
+    border-radius: 20px;
+    padding: 22px 28px;
+    margin: 0 auto;
+    max-width: 580px;
+    animation: glowPulseBlue 3s ease-in-out infinite;
+  }
+
+  @keyframes glowPulseBlue {
+    0%, 100% { box-shadow: 0 0 20px rgba(162,155,254,0.2), 0 0 40px rgba(100,120,255,0.08); }
+    50% { box-shadow: 0 0 40px rgba(162,155,254,0.45), 0 0 80px rgba(100,120,255,0.2); }
+  }
+
+  .visitor-label {
+    color: #c8baff; font-size: 13px; letter-spacing: 3px;
+    text-transform: uppercase; margin-bottom: 12px; opacity: 0.8;
+  }
+
+  .visitor-row {
+    display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;
+  }
+
+  .visitor-icon { font-size: 36px; animation: heartbeat 2s ease-in-out infinite; }
+
+  .visitor-number {
+    font-size: 52px; font-weight: 700;
+    background: linear-gradient(90deg, #a29bfe, #74b9ff, #a29bfe);
+    background-size: 200%;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+    letter-spacing: -2px; line-height: 1;
+  }
+
+  .visitor-number.pop { animation: popAnim 0.4s ease, shimmer 3s linear infinite; }
+
+  .visitor-sublabel {
+    color: #b0a0e0; font-size: 14px; margin-top: 8px; opacity: 0.75; letter-spacing: 1px;
+  }
+
+  .visitor-dots {
+    display: flex; justify-content: center; gap: 6px; margin-top: 14px;
+  }
+  .vdot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: rgba(162,155,254,0.4);
+    animation: dotPulse 1.5s ease-in-out infinite;
+  }
+  .vdot:nth-child(2) { animation-delay: 0.25s; }
+  .vdot:nth-child(3) { animation-delay: 0.5s; }
+  @keyframes dotPulse { 0%, 100% { transform: scale(1); opacity:0.4; } 50% { transform: scale(1.5); opacity:1; background: #a29bfe; } }
+
+  .signature { position: relative; z-index: 2; text-align: center; padding: 16px 20px 36px; }
   .sig-name {
-    font-size: 36px;
-    font-weight: 700;
+    font-size: 36px; font-weight: 700;
     background: linear-gradient(90deg, #a29bfe, #fd79a8, #fdcb6e, #a29bfe);
     background-size: 300%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shimmer 3s linear infinite;
-    letter-spacing: 2px;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite; letter-spacing: 2px;
   }
+  .sig-sub { color: #c39bd3; font-size: 13px; letter-spacing: 3px; margin-top: 4px; opacity: 0.7; }
 
-  .sig-sub {
-    color: #c39bd3;
-    font-size: 13px;
-    letter-spacing: 3px;
-    margin-top: 4px;
-    opacity: 0.7;
-  }
-
-  .floating-hearts-container {
-    pointer-events: none;
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    overflow: hidden; z-index: 1;
-  }
-
-  .fheart {
-    position: absolute;
-    bottom: -60px;
-    font-size: 20px;
-    opacity: 0;
-    animation: floatUp 5s ease-in infinite;
-  }
-
+  .floating-hearts-container { pointer-events: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 1; }
+  .fheart { position: absolute; bottom: -60px; font-size: 20px; opacity: 0; animation: floatUp 5s ease-in infinite; }
   @keyframes floatUp {
     0% { opacity: 0; transform: translateY(0) scale(0.8); }
     15% { opacity: 0.9; }
@@ -258,31 +180,18 @@
     100% { opacity: 0; transform: translateY(-600px) scale(1.4) rotate(20deg); }
   }
 
-  .divider {
-    width: 80px; height: 2px;
-    background: linear-gradient(90deg, transparent, #ff6fd8, transparent);
-    margin: 18px auto;
-    border-radius: 2px;
-  }
-
-  .section-title {
-    font-size: 18px;
-    font-weight: 500;
-    color: #ff9fe8;
-    margin-bottom: 14px;
-    letter-spacing: 1px;
-  }
+  .divider { width: 80px; height: 2px; background: linear-gradient(90deg, transparent, #ff6fd8, transparent); margin: 18px auto; border-radius: 2px; }
+  .divider-blue { width: 80px; height: 2px; background: linear-gradient(90deg, transparent, #a29bfe, transparent); margin: 18px auto; border-radius: 2px; }
+  .section-title { font-size: 18px; font-weight: 500; color: #ff9fe8; margin-bottom: 14px; letter-spacing: 1px; }
 </style>
 
 <div id="love-wrap">
   <canvas id="stars"></canvas>
-
   <div class="floating-hearts-container" id="fhc"></div>
 
   <div class="section">
     <div class="main-title">Made Just For You 💫</div>
     <div class="subtitle">— A little something special —</div>
-
     <div class="hearts-row">
       <span class="big-heart">💖</span>
       <span class="big-heart">✨</span>
@@ -290,7 +199,6 @@
       <span class="big-heart">🌸</span>
       <span class="big-heart">💝</span>
     </div>
-
     <div class="rotating-ring">
       <svg width="120" height="120" viewBox="0 0 120 120">
         <circle cx="60" cy="60" r="54" fill="none" stroke="url(#rg)" stroke-width="2" stroke-dasharray="8 5"/>
@@ -304,7 +212,6 @@
       </svg>
       <span class="center-emoji">💕</span>
     </div>
-
     <div class="ribbon-text">∞ &nbsp; forever &nbsp; ∞</div>
   </div>
 
@@ -324,7 +231,6 @@
     </div>
 
     <div class="divider"></div>
-
     <div class="section-title">🌟 Reasons You're Amazing</div>
     <div class="reasons-grid">
       <div class="reason-card"><span class="reason-icon">😊</span><span class="reason-label">Your smile lights the whole room</span></div>
@@ -336,7 +242,6 @@
     </div>
 
     <div class="divider"></div>
-
     <div class="section-title">🎇 The Universe Agrees</div>
     <div class="glowing-card" style="padding:16px 20px;">
       <div class="poem-text" style="font-style:normal; font-size:14px;">
@@ -351,11 +256,30 @@
   <div class="like-section">
     <div class="divider"></div>
     <div class="section-title">Did This Make Your Heart Smile? 💓</div>
-    <button class="like-btn" onclick="addLike()">
-      ❤️ Send Love
-    </button>
+    <button class="like-btn" onclick="addLike()">❤️ Send Love</button>
     <br>
     <span class="like-count" id="likeCount">💗 0 loves received</span>
+  </div>
+
+  <!-- VISITOR COUNTER -->
+  <div class="visitor-section">
+    <div class="divider-blue"></div>
+    <div class="visitor-card">
+      <div class="visitor-label">👁️ &nbsp; Total Visitors &nbsp; 👁️</div>
+      <div class="visitor-row">
+        <span class="visitor-icon">🌍</span>
+        <div>
+          <div class="visitor-number" id="visitorCount">...</div>
+          <div class="visitor-sublabel">beautiful souls have visited this page</div>
+        </div>
+        <span class="visitor-icon">🌍</span>
+      </div>
+      <div class="visitor-dots">
+        <div class="vdot"></div>
+        <div class="vdot"></div>
+        <div class="vdot"></div>
+      </div>
+    </div>
   </div>
 
   <div class="signature">
@@ -397,16 +321,56 @@
     }
   }
 
+  // Visitor counter using persistent storage
+  async function initVisitorCount() {
+    const el = document.getElementById('visitorCount');
+    try {
+      // Get current count
+      let count = 0;
+      try {
+        const result = await window.storage.get('visitor_count', true);
+        count = parseInt(result.value) || 0;
+      } catch(e) {
+        count = 0;
+      }
+
+      // Increment and save
+      count++;
+      await window.storage.set('visitor_count', String(count), true);
+
+      // Animate count display
+      animateCount(el, count);
+
+    } catch(err) {
+      el.textContent = '✨';
+    }
+  }
+
+  function animateCount(el, target) {
+    let current = Math.max(0, target - 15);
+    const step = () => {
+      if (current < target) {
+        current++;
+        el.textContent = current.toLocaleString();
+        setTimeout(step, 60);
+      } else {
+        el.textContent = target.toLocaleString();
+        el.classList.add('pop');
+      }
+    };
+    step();
+  }
+
   // Stars canvas
   const canvas = document.getElementById('stars');
   const ctx = canvas.getContext('2d');
+  const starsData = [];
 
   function resizeCanvas() {
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight || 800;
   }
 
-  const starsData = [];
   function initStars() {
     resizeCanvas();
     starsData.length = 0;
@@ -450,4 +414,7 @@
     container.appendChild(h);
     setTimeout(() => h.remove(), 9000);
   }, 700);
+
+  // Init visitor counter on load
+  initVisitorCount();
 </script>
